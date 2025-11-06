@@ -1,9 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import {
-  Facebook,
-  Instagram,
-  Linkedin,
   Mail,
   Phone,
   MessageCircle,
@@ -40,35 +37,6 @@ export default function Footer() {
             <p className="text-white/80 text-sm leading-relaxed mb-6">
               Percorsi di Autonomia, Sostegno e Servizi Operativi per giovani verso l&apos;indipendenza.
             </p>
-            <div className="flex gap-3">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full flex items-center justify-center transition-all"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full flex items-center justify-center transition-all"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="https://linkedin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-11 h-11 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full flex items-center justify-center transition-all"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </div>
           </div>
 
           {/* Colonna 2: Link Rapidi */}
@@ -108,7 +76,6 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white mb-4">Contatti</h3>
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
-                <Mail className="h-5 w-5 text-blue-300 mt-1" />
                 <div>
                   <p className="text-xs text-blue-200/80 mb-1 uppercase tracking-wide">Email</p>
                   <a
@@ -120,7 +87,6 @@ export default function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-2">
-                <Phone className="h-5 w-5 text-blue-300 mt-1" />
                 <div>
                   <p className="text-xs text-blue-200/80 mb-1 uppercase tracking-wide">Telefono</p>
                   <a
@@ -132,7 +98,6 @@ export default function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-2">
-                <MessageCircle className="h-5 w-5 text-blue-300 mt-1" />
                 <div>
                   <p className="text-xs text-blue-200/80 mb-1 uppercase tracking-wide">WhatsApp</p>
                   <a
@@ -153,7 +118,6 @@ export default function Footer() {
             <h3 className="text-lg font-semibold text-white mb-4">Sede</h3>
             <div className="space-y-3">
               <div className="flex items-start gap-2">
-                <MapPin className="h-5 w-5 text-blue-300 mt-1" />
                 <div>
                   <p className="text-white/80 text-sm leading-relaxed">
                     Via Giuseppe Mazzini, 42<br />
@@ -163,7 +127,6 @@ export default function Footer() {
                 </div>
               </div>
               <div className="flex items-start gap-2">
-                <Clock className="h-5 w-5 text-blue-300 mt-1" />
                 <div>
                   <p className="text-xs text-blue-200/80 mb-1 uppercase tracking-wide">Orari</p>
                   <p className="text-white/80 text-sm">
