@@ -3,6 +3,19 @@
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-primary-50: #edf9f8;
+  --color-primary-100: #d6f4f2;
+  --color-primary-200: #b8e9e5;
+  --color-primary-300: #8ddbd5;
+  --color-primary-400: #13b5ae;
+  --color-primary-500: #11A09A;
+  --color-primary-600: #0f8f8a;
+  --color-primary-700: #106d68;
+  --color-primary-800: #0b5c57;
+  --color-primary-900: #063c39;
+  --color-primary-950: #022725;
+  --color-primary: #11A09A;
+  --color-primary-foreground: #ffffff;
 }
 
 html {
