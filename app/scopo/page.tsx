@@ -1,126 +1,136 @@
+'use client';
+
 import PageLayout from '@/components/PageLayout';
+import { motion } from 'framer-motion';
+import { Target, Heart, Users, Sparkles, ArrowRight } from 'lucide-react';
 
 export default function ScopoPage() {
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 20 },
+    show: { opacity: 1, y: 0 }
+  };
+
   return (
     <PageLayout>
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-blue-600 mb-8">
-          Il Nostro Scopo
-        </h1>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
-        <div className="bg-gradient-to-br from-blue-600 to-blue-500 text-white rounded-2xl shadow-2xl p-8 md:p-12 mb-8">
-          <h2 className="text-3xl font-bold mb-4">La Nostra Missione</h2>
-          <p className="text-xl leading-relaxed">
-            Trasformare l&apos;uscita dalla comunità in un vero ingresso nella vita adulta, 
-            fornendo competenze concrete, supporto continuativo e una rete di riferimento 
-            stabile per ogni giovane.
+        {/* Header Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-16"
+        >
+          <h1 className="text-5xl md:text-7xl font-bold text-primary-900 mb-6 tracking-tight">
+            Il Nostro <span className="text-primary-500">Scopo</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Costruiamo ponti verso il futuro, trasformando le sfide in opportunità per ogni giovane che esce dalla comunità.
           </p>
-        </div>
-        
-        <div className="space-y-8 mb-12">
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <div className="flex items-start gap-4">
-              <div className="text-4xl">🎯</div>
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold text-blue-600 mb-3">
-                  Obiettivo Principale
-                </h3>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  Preparare i giovani 16-24 anni all&apos;autonomia reale attraverso un percorso 
-                  personalizzato che sviluppa competenze pratiche essenziali per la vita quotidiana.
-                </p>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-center gap-2">
-                    <span className="text-blue-600">✓</span>
-                    Gestione economica e finanziaria personale
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-blue-600">✓</span>
-                    Competenze abitative e domestiche
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-blue-600">✓</span>
-                    Orientamento professionale e lavorativo
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-blue-600">✓</span>
-                    Costruzione di una rete sociale stabile
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+        </motion.div>
+
+        {/* Main Mission Card */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.2 }}
+          className="relative overflow-hidden bg-gradient-to-br from-primary-600 to-primary-800 rounded-3xl shadow-2xl p-8 md:p-16 text-white mb-20"
+        >
+          <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white opacity-10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-64 h-64 bg-primary-400 opacity-20 rounded-full blur-3xl"></div>
           
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <div className="flex items-start gap-4">
-              <div className="text-4xl">💡</div>
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold text-blue-600 mb-3">
-                  La Nostra Visione
-                </h3>
-                <p className="text-gray-700 leading-relaxed">
-                  Un futuro in cui ogni giovane che esce dal sistema di protezione ha le competenze, 
-                  la fiducia e il supporto necessari per costruire una vita autonoma e soddisfacente. 
-                  Vogliamo che nessuno si senta solo o incapace di fronte alle sfide della vita adulta.
-                </p>
+          <div className="relative z-10 flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm text-sm font-medium mb-6">
+                <Sparkles className="w-4 h-4" />
+                <span>La Nostra Missione</span>
               </div>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                Dalla comunità alla <br/>
+                <span className="text-primary-200">piena autonomia</span>
+              </h2>
+              <p className="text-lg md:text-xl text-primary-50 leading-relaxed mb-8">
+                Vogliamo trasformare l&apos;uscita dalla comunità in un vero ingresso nella vita adulta, 
+                fornendo competenze concrete, supporto continuativo e una rete di riferimento 
+                stabile. Non lasciamo nessuno indietro.
+              </p>
+            </div>
+            <div className="w-full md:w-1/3 flex justify-center">
+               <div className="bg-white/10 backdrop-blur-md p-8 rounded-2xl border border-white/20 rotate-3 hover:rotate-0 transition-transform duration-500">
+                  <Target className="w-32 h-32 text-white" strokeWidth={1.5} />
+               </div>
             </div>
           </div>
-          
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <div className="flex items-start gap-4">
-              <div className="text-4xl">❤️</div>
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold text-blue-600 mb-3">
-                  I Nostri Valori
-                </h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-blue-700 mb-2">
-                      Concretezza
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      Competenze pratiche e applicabili immediatamente nella vita reale
-                    </p>
-                  </div>
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-blue-700 mb-2">
-                      Personalizzazione
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      Ogni percorso è unico e costruito sui bisogni del singolo
-                    </p>
-                  </div>
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-blue-700 mb-2">
-                      Continuità
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      Supporto costante, non interventi sporadici o occasionali
-                    </p>
-                  </div>
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-blue-700 mb-2">
-                      Empowerment
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      Dal &quot;fare al posto di&quot; al &quot;sai farlo da solo&quot;
-                    </p>
-                  </div>
-                </div>
+        </motion.div>
+
+        {/* Values Grid */}
+        <motion.div 
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
+        >
+          {[
+            {
+              icon: <Users className="w-8 h-8" />,
+              title: "Comunità",
+              desc: "Creiamo una rete solida di persone che si sostengono a vicenda, perché nessuno cresce da solo."
+            },
+            {
+              icon: <Heart className="w-8 h-8" />,
+              title: "Supporto",
+              desc: "Offriamo un accompagnamento personalizzato che rispetta i tempi e i sogni di ogni ragazzo."
+            },
+            {
+              icon: <Sparkles className="w-8 h-8" />,
+              title: "Futuro",
+              desc: "Forniamo gli strumenti pratici e le competenze necessarie per costruire una vita indipendente e felice."
+            }
+          ].map((card, idx) => (
+            <motion.div 
+              key={idx}
+              variants={item}
+              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary-200"
+            >
+              <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+                {card.icon}
               </div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-2xl shadow-xl p-8 text-center">
-          <h3 className="text-2xl font-bold mb-4">Il Nostro Impegno</h3>
-          <p className="text-lg leading-relaxed max-w-2xl mx-auto">
-            Ogni giovane merita di avere le stesse opportunità di costruire un futuro solido. 
-            Il nostro impegno è essere quel ponte, quella mano tesa che accompagna verso 
-            l&apos;autonomia vera. Un passo alla volta, ma nella direzione giusta.
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-700 transition-colors">
+                {card.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {card.desc}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Call to Action */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-primary-50 rounded-3xl p-8 md:p-12 text-center"
+        >
+          <h2 className="text-3xl font-bold text-primary-900 mb-4">Vuoi far parte del cambiamento?</h2>
+          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+            Che tu sia un ragazzo in cerca di orientamento o un sostenitore che vuole aiutare, c&apos;è posto per te.
           </p>
-        </div>
+          <button className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-full font-semibold transition-all hover:gap-4 shadow-lg hover:shadow-primary-200 cursor-pointer">
+            Unisciti a noi <ArrowRight className="w-5 h-5" />
+          </button>
+        </motion.div>
+
       </div>
     </PageLayout>
   );

@@ -1,199 +1,174 @@
+'use client';
+
 import PageLayout from '@/components/PageLayout';
+import { motion } from 'framer-motion';
+import { Users, Wrench, FileText, Briefcase, Handshake, MonitorPlay, ShieldCheck, ArrowRight } from 'lucide-react';
 
 export default function ServiziPage() {
+  const services = [
+    {
+      icon: <Users className="w-6 h-6" />,
+      label: 'Accompagnamento Personalizzato',
+      emoji: '👥',
+      description:
+        'Un team misto di volontari e professionisti affianca ogni ragazzo nel percorso verso l’autonomia.',
+      points: [
+        'Incontri settimanali o bisettimanali',
+        'Piano personalizzato di obiettivi',
+        'Supporto psicologico ed educativo',
+        'Affiancamento nelle pratiche quotidiane',
+      ],
+    },
+    {
+      icon: <Wrench className="w-6 h-6" />,
+      label: 'Workshop Pratici',
+      emoji: '🛠️',
+      description:
+        'Laboratori interattivi per allenare le competenze fondamentali per vivere da soli.',
+      points: [
+        'Gestione del budget e risparmio',
+        'Casa: bollette, contratti, manutenzione',
+        'Cucina base e alimentazione sana',
+        'Orientamento al lavoro e CV',
+      ],
+    },
+    {
+      icon: <FileText className="w-6 h-6" />,
+      label: 'Supporto Legale e Amministrativo',
+      emoji: '📋',
+      description:
+        'Ti aiutiamo a non perderti tra documenti, burocrazia e scadenze.',
+      points: [
+        'Dichiarazione dei redditi e tasse',
+        'Contratti di lavoro e affitto',
+        'Accesso a servizi e contributi',
+        'Consulenza su diritti e doveri',
+      ],
+    },
+    {
+      icon: <Briefcase className="w-6 h-6" />,
+      label: 'Orientamento Professionale',
+      emoji: '💼',
+      description:
+        'Troviamo insieme la strada giusta tra studio, formazione e lavoro.',
+      points: [
+        'Creazione CV e lettera di presentazione',
+        'Simulazione colloqui di lavoro',
+        'Orientamento a ITS e corsi professionali',
+        'Connessione con aziende partner',
+      ],
+    },
+    {
+      icon: <Handshake className="w-6 h-6" />,
+      label: 'Rete Sociale e Comunitaria',
+      emoji: '🤝',
+      description:
+        'Relazioni vere, momenti condivisi e una comunità che resta anche fuori dalla comunità.',
+      points: [
+        'Attività di gruppo e socializzazione',
+        'Connessione con associazioni locali',
+        'Opportunità di volontariato',
+        'Eventi culturali e ricreativi',
+      ],
+    },
+    {
+      icon: <MonitorPlay className="w-6 h-6" />,
+      label: 'Piattaforma Digitale',
+      emoji: '💻',
+      description:
+        'Uno spazio online sempre accessibile con materiali, promemoria e supporto.',
+      points: [
+        'Guide pratiche e video tutorial',
+        'Calendario eventi e scadenze',
+        'Chat di supporto e Q&A',
+        'Materiali scaricabili e checklist',
+      ],
+    },
+  ];
+
   return (
     <PageLayout>
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-blue-600 mb-4 text-center">
-          I Nostri Servizi
-        </h1>
-        <p className="text-xl text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-          Un insieme completo di supporti per costruire l&apos;autonomia, passo dopo passo
-        </p>
-        
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {/* Accompagnamento Personalizzato */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow">
-            <div className="text-5xl mb-4">👥</div>
-            <h2 className="text-2xl font-bold text-blue-600 mb-4">
-              Accompagnamento Personalizzato
-            </h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Ogni ragazzo viene seguito da una piccola equipe mista di volontari e professionisti.
-            </p>
-            <ul className="space-y-3 text-gray-600">
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Incontri settimanali o bisettimanali</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Piano personalizzato di obiettivi</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Supporto psicologico ed educativo</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Affiancamento nelle pratiche quotidiane</span>
-              </li>
-            </ul>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Hero */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-16"
+        >
+          <div className="inline-flex items-center justify-center p-3 bg-primary-50 rounded-full mb-6">
+            <ShieldCheck className="w-6 h-6 text-primary-600" />
           </div>
-          
-          {/* Workshop Pratici */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow">
-            <div className="text-5xl mb-4">🛠️</div>
-            <h2 className="text-2xl font-bold text-blue-600 mb-4">
-              Workshop Pratici
-            </h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Incontri tematici aperti su competenze essenziali per la vita autonoma.
-            </p>
-            <ul className="space-y-3 text-gray-600">
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Gestione del budget e risparmio</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Casa: bollette, contratti, manutenzione</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Cucina base e alimentazione sana</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Orientamento al lavoro e CV</span>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Supporto Legale e Amministrativo */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow">
-            <div className="text-5xl mb-4">📋</div>
-            <h2 className="text-2xl font-bold text-blue-600 mb-4">
-              Supporto Legale e Amministrativo
-            </h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Aiuto concreto nella gestione di pratiche burocratiche e adempimenti.
-            </p>
-            <ul className="space-y-3 text-gray-600">
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Dichiarazione dei redditi e tasse</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Contratti di lavoro e affitto</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Accesso a servizi e contributi</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Consulenza su diritti e doveri</span>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Orientamento Professionale */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow">
-            <div className="text-5xl mb-4">💼</div>
-            <h2 className="text-2xl font-bold text-blue-600 mb-4">
-              Orientamento Professionale
-            </h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Supporto nella ricerca del lavoro e costruzione del percorso formativo.
-            </p>
-            <ul className="space-y-3 text-gray-600">
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Creazione CV e lettera di presentazione</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Simulazione colloqui di lavoro</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Orientamento a ITS e corsi professionali</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Connessione con aziende partner</span>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Rete Sociale e Comunitaria */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow">
-            <div className="text-5xl mb-4">🤝</div>
-            <h2 className="text-2xl font-bold text-blue-600 mb-4">
-              Rete Sociale e Comunitaria
-            </h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Costruzione di relazioni significative e integrazione nel territorio.
-            </p>
-            <ul className="space-y-3 text-gray-600">
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Attività di gruppo e socializzazione</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Connessione con associazioni locali</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Opportunità di volontariato</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Eventi culturali e ricreativi</span>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Piattaforma Digitale */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-shadow">
-            <div className="text-5xl mb-4">💻</div>
-            <h2 className="text-2xl font-bold text-blue-600 mb-4">
-              Piattaforma Digitale
-            </h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Strumenti online per rimanere connessi e accedere a risorse utili.
-            </p>
-            <ul className="space-y-3 text-gray-600">
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Guide pratiche e video tutorial</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Calendario eventi e scadenze</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Chat di supporto e Q&A</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-blue-600 font-bold">•</span>
-                <span>Materiali scaricabili e checklist</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        
-        <div className="bg-blue-600 text-white rounded-2xl shadow-2xl p-8 md:p-12 text-center">
-          <h3 className="text-3xl font-bold mb-4">Tutti i Servizi Sono Gratuiti</h3>
-          <p className="text-xl leading-relaxed max-w-3xl mx-auto">
-            Crediamo che l&apos;accesso al supporto non debba essere un privilegio. 
-            Tutti i nostri servizi sono completamente gratuiti per i ragazzi seguiti.
+          <h1 className="text-5xl md:text-7xl font-bold text-primary-900 mb-4 tracking-tight">
+            I Nostri <span className="text-primary-500">Servizi</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Un percorso completo, pensato per accompagnarti passo dopo passo verso la tua autonomia.
           </p>
+        </motion.div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
+          {services.map((service, idx) => (
+            <motion.div
+              key={service.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.05 }}
+              className="group bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:border-primary-200 hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-12 h-12 rounded-2xl bg-primary-50 text-primary-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  {service.icon}
+                </div>
+                <span className="text-2xl md:text-3xl" aria-hidden="true">
+                  {service.emoji}
+                </span>
+              </div>
+
+              <h2 className="text-2xl font-bold text-primary-800 mb-3">
+                {service.label}
+              </h2>
+              <p className="text-gray-600 mb-5 leading-relaxed">
+                {service.description}
+              </p>
+
+              <ul className="space-y-3 text-gray-600 mt-auto">
+                {service.points.map((point) => (
+                  <li key={point} className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-primary-400" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </div>
+
+        {/* CTA Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="bg-primary-50 rounded-3xl p-8 md:p-12 text-center"
+        >
+          <h3 className="text-3xl font-bold text-primary-900 mb-4">
+            Tutti i servizi sono gratuiti
+          </h3>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+            Crediamo che il supporto non debba essere un privilegio. Se stai uscendo da una comunità
+            o da una casa famiglia e senti il bisogno di una mano, i nostri servizi sono pensati
+            proprio per te.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-primary-200 transition-all cursor-pointer">
+              Scopri come accedere <ArrowRight className="w-5 h-5" />
+            </button>
+            <p className="text-sm text-gray-500">
+              Nessun costo, solo impegno reciproco e voglia di costruire il tuo futuro.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </PageLayout>
   );

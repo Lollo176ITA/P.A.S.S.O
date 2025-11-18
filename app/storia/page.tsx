@@ -1,86 +1,145 @@
+'use client';
+
 import PageLayout from '@/components/PageLayout';
+import { motion } from 'framer-motion';
+import { Calendar, Users, Heart, Quote, History, Sparkles, ArrowRight } from 'lucide-react';
 
 export default function StoriaPage() {
   return (
     <PageLayout>
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-bold text-blue-600 mb-8">
-          La Nostra Storia
-        </h1>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         
-        <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-8">
-          <div className="prose prose-lg max-w-none">
-            <h2 className="text-2xl font-bold text-blue-600 mb-4">
-              Come Nasce P.A.S.S.O.
-            </h2>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              P.A.S.S.O. nasce dall&apos;osservazione diretta di una realtà spesso invisibile: giovani che 
-              escono da comunità e case famiglia si trovano improvvisamente catapultati nella vita adulta, 
-              senza una rete di supporto, senza competenze pratiche fondamentali e, troppo spesso, senza 
-              speranza.
-            </p>
+        {/* Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-center mb-16"
+        >
+          <div className="inline-flex items-center justify-center p-3 bg-primary-50 rounded-full mb-6">
+            <History className="w-6 h-6 text-primary-600" />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-bold text-primary-900 mb-6 tracking-tight">
+            La Nostra <span className="text-primary-500">Storia</span>
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Un viaggio nato dall&apos;ascolto e cresciuto con la passione di chi crede nel futuro di ogni giovane.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          {/* Main Content Column */}
+          <div className="lg:col-span-8 space-y-12">
             
-            <h3 className="text-xl font-semibold text-blue-700 mb-3 mt-8">
-              Il Problema che Abbiamo Visto
-            </h3>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Durante anni di lavoro con giovani in difficoltà, abbiamo notato un pattern ricorrente: 
-              ragazzi brillanti e pieni di potenziale che, una volta usciti dal sistema di protezione, 
-              cadevano in situazioni di marginalità. Non per mancanza di volontà, ma per mancanza di 
-              strumenti concreti.
-            </p>
-            
-            <div className="bg-blue-50 p-6 rounded-xl my-8 border-l-4 border-blue-600">
-              <p className="text-gray-800 italic">
-                &quot;Non sapevo come pagare una bolletta. Non sapevo a chi chiedere. Mi sentivo 
-                solo e incapace.&quot; - Testimonianza di un ragazzo seguito da P.A.S.S.O.
+            {/* Origin Story */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100"
+            >
+              <h2 className="text-3xl font-bold text-primary-800 mb-6 flex items-center gap-3">
+                <Sparkles className="w-6 h-6 text-primary-500" />
+                Come Nasce P.A.S.S.O.
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                P.A.S.S.O. nasce dall&apos;osservazione diretta di una realtà spesso invisibile: giovani che 
+                escono da comunità e case famiglia si trovano improvvisamente catapultati nella vita adulta, 
+                senza una rete di supporto, senza competenze pratiche fondamentali e, troppo spesso, senza 
+                speranza.
               </p>
+              
+              <div className="bg-primary-50 rounded-2xl p-8 relative mt-8">
+                <Quote className="absolute top-4 left-4 w-8 h-8 text-primary-200 rotate-180" />
+                <p className="text-xl text-primary-900 italic font-medium text-center relative z-10 pt-4">
+                  &quot;Non sapevo come pagare una bolletta. Non sapevo a chi chiedere. Mi sentivo 
+                  solo e incapace.&quot;
+                </p>
+                <p className="text-center text-primary-600 mt-4 text-sm font-bold uppercase tracking-wider">
+                  - Un ragazzo di P.A.S.S.O.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* The Turning Point */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-gradient-to-br from-primary-900 to-primary-800 rounded-3xl p-8 md:p-10 shadow-xl text-white relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -mr-20 -mt-20"></div>
+              
+              <h3 className="text-2xl font-bold mb-4 flex items-center gap-3">
+                <Calendar className="w-6 h-6 text-primary-300" />
+                La Svolta del 2024
+              </h3>
+              <p className="text-primary-100 leading-relaxed text-lg mb-6">
+                Un gruppo di educatori, psicologi, volontari e professionisti si è riunito con 
+                un obiettivo chiaro: creare un ponte concreto tra la vita protetta della comunità e 
+                l&apos;autonomia vera.
+              </p>
+              <p className="text-white font-medium text-lg border-l-4 border-primary-400 pl-4">
+                Non volevamo creare un altro servizio assistenziale, ma una vera &quot;palestra di vita&quot;.
+              </p>
+            </motion.div>
+
+            {/* Today */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100"
+            >
+              <h3 className="text-2xl font-bold text-primary-800 mb-4 flex items-center gap-3">
+                <ArrowRight className="w-6 h-6 text-primary-500" />
+                Oggi
+              </h3>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Oggi P.A.S.S.O. è cresciuto, ma mantiene la stessa filosofia: accompagnamento personalizzato, 
+                competenze pratiche, e una rete di persone che credono nel potenziale di ogni giovane. 
+                Ogni passo conta, e noi siamo qui per farli insieme.
+              </p>
+            </motion.div>
+
+          </div>
+
+          {/* Stats Column */}
+          <div className="lg:col-span-4 space-y-6 sticky top-8">
+            {[
+              { label: "Anno di Fondazione", value: "2024", icon: <Calendar className="w-6 h-6" /> },
+              { label: "Ragazzi Supportati", value: "50+", icon: <Users className="w-6 h-6" /> },
+              { label: "Volontari", value: "20+", icon: <Heart className="w-6 h-6" /> },
+            ].map((stat, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:border-primary-200 transition-colors group"
+              >
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-gray-500 text-sm font-medium">{stat.label}</span>
+                  <div className="text-primary-400 group-hover:text-primary-600 transition-colors">
+                    {stat.icon}
+                  </div>
+                </div>
+                <div className="text-4xl font-bold text-primary-900">{stat.value}</div>
+              </motion.div>
+            ))}
+            
+            <div className="bg-primary-50 rounded-2xl p-6 mt-8">
+              <h4 className="font-bold text-primary-900 mb-2">Vuoi saperne di più?</h4>
+              <p className="text-sm text-gray-600 mb-4">Scopri come puoi contribuire alla nostra storia.</p>
+              <button className="w-full py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-medium transition-colors shadow-md hover:shadow-lg cursor-pointer">
+                Contattaci
+              </button>
             </div>
-            
-            <h3 className="text-xl font-semibold text-blue-700 mb-3 mt-8">
-              La Svolta
-            </h3>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Nel 2024, un gruppo di educatori, psicologi, volontari e professionisti si è riunito con 
-              un obiettivo chiaro: creare un ponte concreto tra la vita protetta della comunità e 
-              l&apos;autonomia vera. Non volevamo creare un altro servizio assistenziale, ma una vera 
-              &quot;palestra di vita&quot;.
-            </p>
-            
-            <h3 className="text-xl font-semibold text-blue-700 mb-3 mt-8">
-              I Primi Passi
-            </h3>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Abbiamo iniziato in piccolo: tre ragazzi, una stanza, e tante domande pratiche da 
-              affrontare insieme. Da lì, abbiamo capito che il nostro approccio funzionava. Non dare 
-              soluzioni preconfezionate, ma costruire insieme, passo dopo passo, le competenze necessarie 
-              per vivere autonomamente.
-            </p>
-            
-            <h3 className="text-xl font-semibold text-blue-700 mb-3 mt-8">
-              Oggi
-            </h3>
-            <p className="text-gray-700 leading-relaxed">
-              Oggi P.A.S.S.O. è cresciuto, ma mantiene la stessa filosofia: accompagnamento personalizzato, 
-              competenze pratiche, e una rete di persone che credono nel potenziale di ogni giovane. 
-              Ogni passo conta, e noi siamo qui per farli insieme.
-            </p>
           </div>
-        </div>
-        
-        <div className="grid md:grid-cols-3 gap-6 mt-12">
-          <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-            <div className="text-4xl font-bold text-blue-600 mb-2">2024</div>
-            <p className="text-gray-600">Anno di Fondazione</p>
-          </div>
-          <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-            <div className="text-4xl font-bold text-blue-600 mb-2">50+</div>
-            <p className="text-gray-600">Ragazzi Supportati</p>
-          </div>
-          <div className="bg-white p-6 rounded-xl shadow-lg text-center">
-            <div className="text-4xl font-bold text-blue-600 mb-2">20+</div>
-            <p className="text-gray-600">Volontari e Professionisti</p>
-          </div>
+
         </div>
       </div>
     </PageLayout>
