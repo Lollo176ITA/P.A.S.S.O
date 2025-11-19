@@ -12,7 +12,7 @@ export default function PageLayout({ children }: PageLayoutProps) {
     <div className="min-h-screen bg-white flex flex-col">
       <Header />
       <SubHeader />
-      <main className="container mx-auto px-4 py-12 flex-grow">
+      <main className="container mx-auto px-4 py-12 grow">
         {children}
       </main>
       <Footer />
