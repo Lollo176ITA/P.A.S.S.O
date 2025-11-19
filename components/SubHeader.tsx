@@ -17,7 +17,7 @@ export default function SubHeader() {
 
   return (
     <div id="subheader-root" className="relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-primary-600 via-primary to-primary-400" />
+      <div className="absolute inset-0 bg-linear-to-r from-primary-600 via-primary to-primary-400" />
       <motion.div
         className="absolute -left-10 top-4 h-32 w-32 rounded-full bg-white/20 blur-3xl"
         initial={{ opacity: 0.2, scale: 0.8 }}

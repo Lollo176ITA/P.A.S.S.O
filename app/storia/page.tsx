@@ -67,7 +67,7 @@ export default function StoriaPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="bg-gradient-to-br from-primary-900 to-primary-800 rounded-3xl p-8 md:p-10 shadow-xl text-white relative overflow-hidden"
+              className="bg-linear-to-br from-primary-900 to-primary-800 rounded-3xl p-8 md:p-10 shadow-xl text-white relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full blur-3xl -mr-20 -mt-20"></div>
               

@@ -43,7 +43,7 @@ export default function ScopoPage() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2 }}
-          className="relative overflow-hidden bg-gradient-to-br from-primary-600 to-primary-800 rounded-3xl shadow-2xl p-8 md:p-16 text-white mb-20"
+          className="relative overflow-hidden bg-linear-to-br from-primary-600 to-primary-800 rounded-3xl shadow-2xl p-8 md:p-16 text-white mb-20"
         >
           <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white opacity-10 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-64 h-64 bg-primary-400 opacity-20 rounded-full blur-3xl"></div>

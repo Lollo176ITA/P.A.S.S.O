@@ -11,7 +11,7 @@ import {
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden text-white py-16 bg-primary-900">
-      <div className="absolute inset-0 bg-gradient-to-r from-primary-900 via-primary-800 to-primary" aria-hidden />
+      <div className="absolute inset-0 bg-linear-to-r from-primary-900 via-primary-800 to-primary" aria-hidden />
       <div className="absolute -right-32 top-10 h-64 w-64 rounded-full bg-white/15 blur-3xl" aria-hidden />
       <div className="absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-primary/30 blur-3xl" aria-hidden />
 
