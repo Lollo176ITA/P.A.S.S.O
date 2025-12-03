@@ -154,7 +154,7 @@ export default function Home() {
 
         <section id="palestra" className="scroll-mt-32">
           <div className="text-center mb-10">
-            <p className="text-sm uppercase tracking-[0.3em] text-primary-500">Cosa faremo</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-primary-700">Cosa faremo</p>
             <h2 className="text-4xl font-bold text-primary-900">Una palestra di autonomia</h2>
             <p className="mt-4 text-gray-600">
               Lavoriamo accanto ai ragazzi su tutte le competenze di ogni giorno, costruendo fiducia e
@@ -178,7 +178,7 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-2">
             {MODALITIES.map((item) => (
               <div key={item.title} className="rounded-[28px] border border-primary/15 bg-primary-50/80 p-6 shadow-lg">
-                <p className="text-xs uppercase tracking-[0.3em] text-primary-400 mb-2">Come lo faremo</p>
+                <p className="text-xs uppercase tracking-[0.3em] text-primary-700 mb-2">Come lo faremo</p>
                 <h3 className="text-2xl font-semibold text-primary-900">{item.title}</h3>
                 <ul className="mt-4 space-y-3 text-sm text-gray-700 leading-relaxed">
                   {item.body.map((line) => (
@@ -195,7 +195,7 @@ export default function Home() {
 
         <section id="fasce" className="scroll-mt-32">
           <div className="rounded-4xl bg-linear-to-r from-primary-100 via-white to-primary-50 p-10 shadow-xl">
-            <p className="text-sm uppercase tracking-[0.35em] text-primary-500 mb-2">Azioni per fasce d’età</p>
+            <p className="text-sm uppercase tracking-[0.35em] text-primary-700 mb-2">Azioni per fasce d’età</p>
             <div className="grid gap-6 md:grid-cols-2">
               {AGE_ACTIONS.map((action) => (
                 <div key={action.age} className="rounded-2xl border border-white/60 bg-white/90 p-6 shadow">
@@ -209,7 +209,7 @@ export default function Home() {
 
         <section id="relazione" className="scroll-mt-32 grid gap-8 lg:grid-cols-2">
           <div className="rounded-[28px] border border-primary/15 bg-white p-8 shadow-lg">
-            <p className="text-sm uppercase tracking-[0.35em] text-primary-500 mb-4">Rapporto equipe–ragazzo</p>
+            <p className="text-sm uppercase tracking-[0.35em] text-primary-700 mb-4">Rapporto equipe–ragazzo</p>
             <h3 className="text-3xl font-bold text-primary-900 mb-4">Ogni passo è un PASSO</h3>
             <p className="text-gray-700 leading-relaxed">
               Il baricentro è relazionale e pratico insieme: l’equipe accompagna il ragazzo su obiettivi misurabili
@@ -218,7 +218,7 @@ export default function Home() {
             </p>
           </div>
           <div className="rounded-[28px] border border-primary/15 bg-white p-8 shadow-lg">
-            <p className="text-sm uppercase tracking-[0.35em] text-primary-500 mb-4">Perché</p>
+            <p className="text-sm uppercase tracking-[0.35em] text-primary-700 mb-4">Perché</p>
             <h3 className="text-3xl font-bold text-primary-900 mb-4">Autonomia si costruisce facendo</h3>
             <p className="text-gray-700 leading-relaxed">
               Non basta un manuale: serve una mano concreta, competente e costante. PASSO aiuta a passare dal “non
@@ -229,7 +229,7 @@ export default function Home() {
 
         <section id="comuni" className="scroll-mt-32">
           <div className="rounded-4xl border border-primary/15 bg-white p-8 shadow-xl">
-            <p className="text-sm uppercase tracking-[0.35em] text-primary-500 mb-3">Il ruolo dei Comuni</p>
+            <p className="text-sm uppercase tracking-[0.35em] text-primary-700 mb-3">Il ruolo dei Comuni</p>
             <h3 className="text-3xl font-bold text-primary-900 mb-4">Tre richieste semplici ma decisive</h3>
             <ul className="space-y-4 text-gray-700">
               {MUNICIPAL_POINTS.map((item) => (
@@ -248,7 +248,7 @@ export default function Home() {
 
         <section id="pilota" className="scroll-mt-32">
           <div className="text-center mb-10">
-            <p className="text-sm uppercase tracking-[0.3em] text-primary-500">PASSO · esempio pilota</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-primary-700">PASSO · esempio pilota</p>
             <h3 className="text-4xl font-bold text-primary-900">Come può partire un percorso</h3>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
@@ -269,7 +269,7 @@ export default function Home() {
           <div className="mt-6 text-center">
             <Link
               href="/contatti"
-              className="inline-flex items-center rounded-full bg-primary px-8 py-3 text-white shadow-lg shadow-primary/40 transition hover:-translate-y-0.5"
+              className="inline-flex items-center rounded-full bg-primary-800 px-8 py-3 text-white shadow-lg shadow-primary/40 transition hover:-translate-y-0.5"
             >
               Partecipa al pilota
             </Link>

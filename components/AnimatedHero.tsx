@@ -51,7 +51,7 @@ export default function AnimatedHero() {
       const footRotation = Number((tangentAngle + (index % 2 === 0 ? -20 : 20)).toFixed(2));
       return {
         id: index,
-        color: "#11A09A",
+        color: "var(--color-primary-800)",
         left: `${xPercent}%`,
         top: `${yPercent}%`,
         rotation: footRotation,
@@ -77,7 +77,7 @@ export default function AnimatedHero() {
               type="button"
               className="material-symbols-outlined absolute text-4xl md:text-5xl drop-shadow-[0_8px_22px_rgba(0,0,0,0.35)] transition focus:outline-none"
               style={{
-                color: "#11A09A",
+                color: step.color,
                 left: step.left,
                 top: step.top,
                 transform: "translate(-50%, -50%)",
@@ -87,9 +87,13 @@ export default function AnimatedHero() {
                 scale: 0.3,
               }}
               animate={{
-                opacity: activeStepIndex === index ? 1 : 0.8,
+                opacity: activeStepIndex === index ? 1 : 0.9,
                 scale: activeStepIndex === index ? 1.15 : 1,
                 rotate: step.rotation,
+              }}
+              whileHover={{
+                opacity: 1,
+                scale: 1.05,
               }}
               transition={{
                 duration: 1.2,

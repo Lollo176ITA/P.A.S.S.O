@@ -30,7 +30,7 @@ export default function Header() {
       `sticky top-0 z-50 transition-colors duration-500 ${
         isScrolled
           ? 'bg-white/95 backdrop-blur-xl shadow-xl border-b border-primary/15'
-          : 'bg-primary shadow-lg'
+          : 'bg-primary-800 shadow-lg'
       }`,
     [isScrolled],
   );
@@ -81,7 +81,7 @@ export default function Header() {
             <div className="flex flex-col">
               <motion.h1
                 className={`text-2xl md:text-3xl font-bold transition-colors ${
-                  isScrolled ? 'text-primary-700' : 'text-white group-hover:text-white/90'
+                  isScrolled ? 'text-primary-800' : 'text-white group-hover:text-white'
                 }`}
                 layout
               >
@@ -89,7 +89,7 @@ export default function Header() {
               </motion.h1>
               <span
                 className={`hidden md:block text-xs md:text-sm transition-colors ${
-                  isScrolled ? 'text-primary-600/80' : 'text-white/80'
+                  isScrolled ? 'text-primary-800' : 'text-white'
                 }`}
               >
                 Percorsi di Autonomia, Sostegno e Servizi Operativi
@@ -117,8 +117,8 @@ export default function Header() {
                     className={`px-4 py-2 rounded-xl font-medium transition-all text-sm whitespace-nowrap ${
                       isActive
                         ? isScrolled
-                          ? 'bg-primary text-white shadow-lg shadow-primary/40'
-                          : 'bg-white/90 text-primary shadow-lg shadow-black/10'
+                          ? 'bg-primary-800 text-white shadow-lg shadow-primary/40'
+                          : 'bg-white text-primary-800 shadow-lg shadow-black/10'
                         : isScrolled
                           ? 'text-primary-700 hover:bg-primary/10 hover:text-primary-700'
                           : 'text-white/90 hover:bg-white/20 hover:text-white'
@@ -159,7 +159,7 @@ export default function Header() {
               className={`md:hidden overflow-hidden ${
                 isScrolled
                   ? 'bg-white/95 backdrop-blur-lg border border-primary/15 rounded-2xl mt-2 shadow-xl'
-                  : 'bg-gradient-to-b from-primary-600 via-primary to-primary-400 rounded-2xl mt-2 shadow-lg'
+                  : 'bg-gradient-to-b from-primary-900 via-primary-800 to-primary-700 rounded-2xl mt-2 shadow-lg'
               }`}
             >
               <div className="py-4">
@@ -173,8 +173,8 @@ export default function Header() {
                         className={`px-4 py-3 rounded-lg font-medium text-center transition-all ${
                           isActive
                             ? isScrolled
-                              ? 'bg-primary text-white shadow-lg shadow-primary/40'
-                              : 'bg-white text-primary shadow-md'
+                              ? 'bg-primary-800 text-white shadow-lg shadow-primary/40'
+                              : 'bg-white text-primary-800 shadow-md'
                             : isScrolled
                               ? 'text-primary-700 hover:bg-primary/10'
                               : 'text-white hover:bg-white/15'
