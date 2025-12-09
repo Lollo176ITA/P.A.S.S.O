@@ -2,16 +2,16 @@
 
 import PageLayout from '@/components/PageLayout';
 import { motion } from 'framer-motion';
-import { Users, Wrench, FileText, Briefcase, Handshake, MonitorPlay, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Users, Wrench, FileText, Briefcase, Handshake, MonitorPlay, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 export default function ServiziPage() {
   const services = [
     {
       icon: <Users className="w-6 h-6" />,
       label: 'Accompagnamento Personalizzato',
-      emoji: '👥',
       description:
-        'Un team misto di volontari e professionisti affianca ogni ragazzo nel percorso verso l’autonomia.',
+        "Un team misto di volontari e professionisti affianca ogni ragazzo nel percorso verso l'autonomia.",
       points: [
         'Incontri settimanali o bisettimanali',
         'Piano personalizzato di obiettivi',
@@ -22,7 +22,6 @@ export default function ServiziPage() {
     {
       icon: <Wrench className="w-6 h-6" />,
       label: 'Workshop Pratici',
-      emoji: '🛠️',
       description:
         'Laboratori interattivi per allenare le competenze fondamentali per vivere da soli.',
       points: [
@@ -35,7 +34,6 @@ export default function ServiziPage() {
     {
       icon: <FileText className="w-6 h-6" />,
       label: 'Supporto Legale e Amministrativo',
-      emoji: '📋',
       description:
         'Ti aiutiamo a non perderti tra documenti, burocrazia e scadenze.',
       points: [
@@ -48,7 +46,6 @@ export default function ServiziPage() {
     {
       icon: <Briefcase className="w-6 h-6" />,
       label: 'Orientamento Professionale',
-      emoji: '💼',
       description:
         'Troviamo insieme la strada giusta tra studio, formazione e lavoro.',
       points: [
@@ -61,7 +58,6 @@ export default function ServiziPage() {
     {
       icon: <Handshake className="w-6 h-6" />,
       label: 'Rete Sociale e Comunitaria',
-      emoji: '🤝',
       description:
         'Relazioni vere, momenti condivisi e una comunità che resta anche fuori dalla comunità.',
       points: [
@@ -74,7 +70,6 @@ export default function ServiziPage() {
     {
       icon: <MonitorPlay className="w-6 h-6" />,
       label: 'Piattaforma Digitale',
-      emoji: '💻',
       description:
         'Uno spazio online sempre accessibile con materiali, promemoria e supporto.',
       points: [
@@ -95,10 +90,7 @@ export default function ServiziPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center justify-center p-3 bg-primary-50 rounded-full mb-6">
-            <ShieldCheck className="w-6 h-6 text-primary-600" />
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-900 mb-4 tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-primary-900 mb-6 tracking-tight">
             I Nostri <span className="text-primary-500">Servizi</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
@@ -117,13 +109,8 @@ export default function ServiziPage() {
               transition={{ delay: idx * 0.05 }}
               className="group bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:border-primary-200 hover:shadow-xl transition-all duration-300 flex flex-col h-full"
             >
-              <div className="flex items-center justify-between mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-primary-50 text-primary-600 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  {service.icon}
-                </div>
-                <span className="text-2xl md:text-3xl" aria-hidden="true">
-                  {service.emoji}
-                </span>
+              <div className="w-12 h-12 rounded-2xl bg-primary-50 text-primary-600 flex items-center justify-center group-hover:scale-110 transition-transform mb-4">
+                {service.icon}
               </div>
 
               <h2 className="text-2xl font-bold text-primary-800 mb-3">
@@ -161,9 +148,11 @@ export default function ServiziPage() {
             proprio per te.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-primary-200 transition-all cursor-pointer">
-              Scopri come accedere <ArrowRight className="w-5 h-5" />
-            </button>
+            <Link href="/contatti">
+              <button className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-primary-200 transition-all cursor-pointer">
+                Scopri come accedere <ArrowRight className="w-5 h-5" />
+              </button>
+            </Link>
             <p className="text-sm text-gray-500">
               Nessun costo, solo impegno reciproco e voglia di costruire il tuo futuro.
             </p>

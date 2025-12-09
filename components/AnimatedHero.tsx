@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 
-const REVEAL_DELAY = 2000;
+const REVEAL_DELAY = 1000;
 
 const PASSO_LETTERS = [
   {

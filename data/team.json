@@ -1,0 +1,98 @@
+{
+  "soci": [
+    {
+      "id": "lorenzo-censi",
+      "nome": "Lorenzo",
+      "cognome": "Censi",
+      "ruolo": "Presidente",
+      "descrizione": "Fondatore di P.A.S.S.O., ha vissuto 10 anni in casa famiglia. La sua esperienza diretta è il cuore del progetto.",
+      "foto": "/team/lorenzo-censi.jpg"
+    },
+    {
+      "id": "giorgia",
+      "nome": "Giorgia",
+      "cognome": "",
+      "ruolo": "Vicepresidente",
+      "descrizione": "Ha creduto in questo progetto fin dal primo momento, supportando la nascita dell'associazione.",
+      "foto": "/team/giorgia.jpg"
+    },
+    {
+      "id": "alessio",
+      "nome": "Alessio",
+      "cognome": "",
+      "ruolo": "Tesoriere",
+      "descrizione": "Migliore amico di Lorenzo, si occupa della gestione economica e finanziaria dell'associazione.",
+      "foto": "/team/alessio.jpg"
+    },
+    {
+      "id": "chiara",
+      "nome": "Chiara",
+      "cognome": "",
+      "ruolo": "Segretario",
+      "descrizione": "Gestisce la comunicazione e l'organizzazione interna dell'associazione.",
+      "foto": "/team/chiara.jpg"
+    },
+    {
+      "id": "sonia",
+      "nome": "Sonia",
+      "cognome": "",
+      "ruolo": "Socio",
+      "descrizione": "Parte attiva del primo nucleo di soci fondatori di P.A.S.S.O.",
+      "foto": "/team/sonia.jpg"
+    },
+    {
+      "id": "marco",
+      "nome": "Marco",
+      "cognome": "",
+      "ruolo": "Socio",
+      "descrizione": "Parte attiva del primo nucleo di soci fondatori di P.A.S.S.O.",
+      "foto": "/team/marco.jpg"
+    },
+    {
+      "id": "claudia",
+      "nome": "Claudia",
+      "cognome": "",
+      "ruolo": "Socio",
+      "descrizione": "Parte attiva del primo nucleo di soci fondatori di P.A.S.S.O.",
+      "foto": "/team/claudia.jpg"
+    },
+    {
+      "id": "eleonora",
+      "nome": "Eleonora",
+      "cognome": "",
+      "ruolo": "Socio",
+      "descrizione": "Parte attiva del primo nucleo di soci fondatori di P.A.S.S.O.",
+      "foto": "/team/eleonora.jpg"
+    },
+    {
+      "id": "lorenzo-s",
+      "nome": "Lorenzo S.",
+      "cognome": "",
+      "ruolo": "Socio",
+      "descrizione": "Parte attiva del primo nucleo di soci fondatori di P.A.S.S.O.",
+      "foto": "/team/lorenzo-s.jpg"
+    }
+  ],
+  "volontari": [
+    {
+      "id": "volontario-1",
+      "nome": "Nome",
+      "cognome": "Cognome",
+      "foto": "/team/placeholder.jpg"
+    },
+    {
+        "id": "ugo-1",
+      "nome": "Nome",
+      "cognome": "aa",
+      "foto": "/team/placeholder.jpg"
+    }
+  ],
+  "partner": [
+    {
+      "id": "partner-1",
+      "nome": "Cf",
+      "logo": "/partner/placeholder.png",
+      "sito": "https://example.com"
+    }
+  ]
+}

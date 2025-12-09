@@ -2,173 +2,211 @@
 
 import PageLayout from '@/components/PageLayout';
 import { motion } from 'framer-motion';
-import { Users, HeartHandshake, Sparkles, Star, ArrowRight, UserRound, HandHeart } from 'lucide-react';
+import { ArrowRight, UserRound, ExternalLink } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import teamData from '@/data/team.json';
 
 export default function TeamPage() {
-  const coreTeam = [
-    {
-      initials: 'MC',
-      name: 'Maria Consonni',
-      role: 'Coordinatrice Generale',
-      bio: 'Pedagogista con 15 anni di esperienza in comunità per minori. Coordina le attività e garantisce la qualità del supporto educativo.',
-    },
-    {
-      initials: 'LR',
-      name: 'Luca Rossi',
-      role: 'Responsabile Progetti',
-      bio: 'Psicologo e project manager, si occupa della pianificazione strategica e della gestione dei progetti di accompagnamento.',
-    },
-  ];
-
-  const professionalTeam = [
-    { name: 'Sofia Bianchi', role: 'Psicologa', icon: '🧠' },
-    { name: 'Marco Verdi', role: 'Educatore Professionale', icon: '👨‍🏫' },
-    { name: 'Anna Ferrari', role: 'Assistente Sociale', icon: '🤲' },
-    { name: 'Giorgio Colombo', role: 'Consulente del Lavoro', icon: '💼' },
-    { name: 'Elena Russo', role: 'Avvocato', icon: '⚖️' },
-    { name: 'Paolo Ricci', role: 'Commercialista', icon: '📊' },
-  ];
-
-  const volunteerStats = [
-    { label: 'Volontari attivi', value: '15+' },
-    { label: 'Ore di volontariato/mese', value: '200+' },
-    { label: 'Professioni diverse', value: '10+' },
-    { label: 'Passione e dedizione', value: '100%' },
-  ];
+  // Separa i ruoli principali dai soci normali
+  const ruoliPrincipali = ['Presidente', 'Vicepresidente', 'Tesoriere', 'Segretario'];
+  const direttivo = teamData.soci.filter(s => ruoliPrincipali.includes(s.ruolo));
+  const altriSoci = teamData.soci.filter(s => !ruoliPrincipali.includes(s.ruolo));
+  const volontari = teamData.volontari;
+  const partner = teamData.partner;
 
   return (
     <PageLayout>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Hero */}
+        
+        {/* Hero con foto di gruppo */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <div className="inline-flex items-center justify-center p-3 bg-primary-50 rounded-full mb-6">
-            <Users className="w-6 h-6 text-primary-600" />
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-900 mb-4 tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-primary-900 mb-6 tracking-tight">
             Il Nostro <span className="text-primary-500">Team</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-8">
             Persone diverse, un unico obiettivo: accompagnare ogni ragazzo verso una vita autonoma e piena.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start mb-16">
-          {/* Coordinamento */}
-          <div className="lg:col-span-2 space-y-8">
-            <h2 className="text-2xl font-bold text-primary-800 flex items-center gap-3">
-              <Sparkles className="w-5 h-5 text-primary-500" />
-              Coordinamento
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {coreTeam.map((member) => (
-                <motion.div
-                  key={member.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:border-primary-200 hover:shadow-xl transition-all"
-                >
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="w-14 h-14 rounded-2xl bg-primary-600 text-white flex items-center justify-center text-lg font-bold">
-                      {member.initials}
-                    </div>
-                    <div className="text-left">
-                      <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
-                      <p className="text-primary-600 text-sm font-medium">{member.role}</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
-                </motion.div>
-              ))}
-            </div>
+        {/* Foto di gruppo hero */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.2 }}
+          className="relative w-full h-64 md:h-96 rounded-3xl overflow-hidden mb-20 bg-primary-100"
+        >
+          <div className="absolute inset-0 flex items-center justify-center">
+            <p className="text-primary-400 text-lg">Foto di gruppo del team</p>
           </div>
+        </motion.div>
 
-          {/* Volontari highlight */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+        {/* Direttivo */}
+        <section className="mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-primary-50 rounded-3xl p-8 flex flex-col gap-4"
+            className="text-3xl font-bold text-primary-900 text-center mb-12"
           >
-            <div className="inline-flex items-center gap-2 text-primary-700 mb-2">
-              <HeartHandshake className="w-5 h-5" />
-              <span className="text-sm font-semibold tracking-wide uppercase">Il cuore di P.A.S.S.O.</span>
-            </div>
-            <h3 className="text-2xl font-bold text-primary-900 mb-2">Volontari e professionisti</h3>
-            <p className="text-gray-700 text-sm leading-relaxed mb-4">
-              Il nostro team unisce competenze tecniche e umane: ogni persona porta la propria storia
-              e il proprio sguardo, per costruire insieme percorsi su misura.
-            </p>
-            <div className="grid grid-cols-2 gap-4 mt-auto">
-              {volunteerStats.map((stat) => (
-                <div key={stat.label} className="bg-white rounded-2xl p-4 shadow-sm border border-primary-100">
-                  <div className="text-2xl font-bold text-primary-900">{stat.value}</div>
-                  <p className="text-xs text-gray-600 mt-1">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Equipe Professionale */}
-        <section className="mb-16">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-primary-800 flex items-center gap-3">
-              <UserRound className="w-5 h-5 text-primary-500" />
-              Equipe professionale
-            </h2>
-            <span className="hidden md:inline-flex items-center gap-1 text-xs text-gray-500">
-              <Star className="w-4 h-4 text-primary-400" />
-              Competenze diverse, stessa direzione
-            </span>
-          </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {professionalTeam.map((member) => (
+            Il Direttivo
+          </motion.h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {direttivo.map((membro, idx) => (
               <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 15 }}
+                key={membro.id}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-6 text-center shadow-md hover:shadow-lg border border-gray-100 hover:border-primary-200 transition-all"
+                transition={{ delay: idx * 0.1 }}
+                className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 hover:border-primary-200 hover:shadow-xl transition-all"
               >
-                <div className="text-3xl mb-3" aria-hidden="true">
-                  {member.icon}
+                <div className="relative h-64 bg-primary-50">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <UserRound className="w-20 h-20 text-primary-200" />
+                  </div>
                 </div>
-                <h3 className="text-base font-bold text-gray-900 mb-1">{member.name}</h3>
-                <p className="text-primary-600 text-xs font-medium">{member.role}</p>
+                <div className="p-6">
+                  <span className="inline-block px-3 py-1 bg-primary-100 text-primary-700 text-xs font-semibold rounded-full mb-3">
+                    {membro.ruolo}
+                  </span>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    {membro.nome} {membro.cognome}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {membro.descrizione}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
         </section>
 
-        {/* Volontari sezione testo */}
-        <section className="mb-16">
-          <div className="bg-white rounded-3xl p-8 md:p-10 shadow-lg border border-gray-100 flex flex-col md:flex-row items-center gap-8">
-            <div className="flex-1">
-              <h2 className="text-2xl font-bold text-primary-800 mb-3 flex items-center gap-2">
-                <HandHeart className="w-5 h-5 text-primary-500" />
-                I nostri volontari
-              </h2>
-              <p className="text-gray-700 leading-relaxed text-sm md:text-base">
-                Il cuore pulsante di P.A.S.S.O. è la nostra rete di volontari: persone di tutte le età e professioni
-                che dedicano il loro tempo e le loro competenze per fare la differenza. Ognuno porta qualcosa di unico,
-                ma tutti condividono la stessa idea: nessuno deve affrontare da solo il passaggio all&apos;autonomia.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4 w-full md:w-auto">
-              {volunteerStats.map((stat) => (
-                <div key={stat.label} className="text-center bg-primary-50 rounded-2xl px-4 py-3">
-                  <div className="text-2xl font-bold text-primary-900 mb-1">{stat.value}</div>
-                  <p className="text-xs text-gray-600">{stat.label}</p>
-                </div>
+        {/* Altri Soci */}
+        {altriSoci.length > 0 && (
+          <section className="mb-20">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl font-bold text-primary-900 text-center mb-12"
+            >
+              I Soci Fondatori
+            </motion.h2>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              {altriSoci.map((membro, idx) => (
+                <motion.div
+                  key={membro.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.05 }}
+                  className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 hover:border-primary-200 hover:shadow-lg transition-all text-center"
+                >
+                  <div className="relative h-40 bg-primary-50">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <UserRound className="w-12 h-12 text-primary-200" />
+                    </div>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-base font-bold text-gray-900">
+                      {membro.nome} {membro.cognome}
+                    </h3>
+                    <p className="text-primary-600 text-xs font-medium mt-1">
+                      Socio Fondatore
+                    </p>
+                  </div>
+                </motion.div>
               ))}
             </div>
-          </div>
-        </section>
+          </section>
+        )}
+
+        {/* Volontari */}
+        {volontari.length > 0 && volontari[0].nome !== 'Nome' && (
+          <section className="mb-20">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl font-bold text-primary-900 text-center mb-4"
+            >
+              I Nostri Volontari
+            </motion.h2>
+            <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+              Il cuore pulsante di P.A.S.S.O.: persone che dedicano il loro tempo per fare la differenza.
+            </p>
+            
+            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+              {volontari.map((volontario, idx) => (
+                <motion.div
+                  key={volontario.id}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.03 }}
+                  className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 hover:border-primary-200 transition-all text-center p-3"
+                >
+                  <div className="relative w-16 h-16 mx-auto rounded-full bg-primary-50 overflow-hidden mb-2">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <UserRound className="w-8 h-8 text-primary-200" />
+                    </div>
+                  </div>
+                  <h4 className="text-sm font-medium text-gray-900 truncate">
+                    {volontario.nome}
+                  </h4>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Partner */}
+        {partner.length > 0 && partner[0].nome !== 'Nome Partner' && (
+          <section className="mb-20">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl font-bold text-primary-900 text-center mb-4"
+            >
+              I Nostri Partner
+            </motion.h2>
+            <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+              Collaboriamo con realtà che condividono la nostra visione.
+            </p>
+            
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {partner.map((p, idx) => (
+                <motion.a
+                  key={p.id}
+                  href={p.sito}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="bg-white rounded-2xl p-6 shadow-md border border-gray-100 hover:border-primary-200 hover:shadow-lg transition-all flex flex-col items-center justify-center gap-3 group"
+                >
+                  <div className="relative w-24 h-24 bg-gray-50 rounded-xl overflow-hidden flex items-center justify-center">
+                    <span className="text-gray-400 text-xs">Logo</span>
+                  </div>
+                  <span className="text-sm font-medium text-gray-700 group-hover:text-primary-600 transition-colors flex items-center gap-1">
+                    {p.nome}
+                    <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </span>
+                </motion.a>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* Call to Action */}
         <motion.div
@@ -179,15 +217,15 @@ export default function TeamPage() {
         >
           <h3 className="text-3xl font-bold mb-4">Vuoi unirti al team?</h3>
           <p className="text-lg leading-relaxed mb-8 max-w-2xl mx-auto text-gray-700">
-            Siamo sempre alla ricerca di professionisti e volontari che vogliano mettere a disposizione tempo,
-            competenze e cuore per accompagnare i nostri ragazzi.
+            Siamo sempre alla ricerca di volontari che vogliano mettere a disposizione tempo,
+            competenze e cuore per accompagnare i ragazzi nel loro percorso.
           </p>
-          <a
+          <Link
             href="/contatti"
             className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold px-10 py-4 rounded-full shadow-lg hover:shadow-primary-200 transition-all"
           >
             Contattaci <ArrowRight className="w-5 h-5" />
-          </a>
+          </Link>
         </motion.div>
       </div>
     </PageLayout>
