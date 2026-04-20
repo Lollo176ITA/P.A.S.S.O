@@ -26,25 +26,25 @@ export default async function DashboardPage() {
     .limit(5);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-surface-muted">
       {/* Header */}
       <Header />
       
       <div className="container mx-auto px-4 py-8">
         {/* Page Title */}
         <div className="mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
+          <h1 className="text-4xl font-bold text-foreground mb-2">
             Dashboard P.A.S.S.O.
           </h1>
-          <p className="text-gray-600">
+          <p className="text-muted-foreground">
             Panoramica generale del progetto
           </p>
         </div>
 
         {/* Stats Grid */}
         <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-sm font-medium text-gray-500 mb-2">
+          <div className="bg-surface rounded-lg shadow border border-border p-6">
+            <h3 className="text-sm font-medium text-muted-foreground mb-2">
               Ragazzi Attivi
             </h3>
             <p className="text-3xl font-bold text-blue-600">
@@ -52,8 +52,8 @@ export default async function DashboardPage() {
             </p>
           </div>
           
-          <div className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-sm font-medium text-gray-500 mb-2">
+          <div className="bg-surface rounded-lg shadow border border-border p-6">
+            <h3 className="text-sm font-medium text-muted-foreground mb-2">
               Obiettivi in Corso
             </h3>
             <p className="text-3xl font-bold text-purple-600">
@@ -61,8 +61,8 @@ export default async function DashboardPage() {
             </p>
           </div>
           
-          <div className="bg-white rounded-lg shadow p-6">
-            <h3 className="text-sm font-medium text-gray-500 mb-2">
+          <div className="bg-surface rounded-lg shadow border border-border p-6">
+            <h3 className="text-sm font-medium text-muted-foreground mb-2">
               Prossimi Eventi
             </h3>
             <p className="text-3xl font-bold text-green-600">
@@ -73,9 +73,9 @@ export default async function DashboardPage() {
 
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Ragazzi Section */}
-          <div className="bg-white rounded-lg shadow">
-            <div className="p-6 border-b border-gray-200">
-              <h2 className="text-xl font-bold text-gray-900">
+          <div className="bg-surface rounded-lg shadow border border-border">
+            <div className="p-6 border-b border-border">
+              <h2 className="text-xl font-bold text-foreground">
                 Ragazzi Recenti
               </h2>
             </div>
@@ -89,14 +89,14 @@ export default async function DashboardPage() {
                   {ragazzi.map((ragazzo) => (
                     <div 
                       key={ragazzo.id} 
-                      className="p-4 bg-gray-50 rounded-lg"
+                      className="p-4 bg-surface-muted rounded-lg"
                     >
                       <div className="flex justify-between items-start">
                         <div>
-                          <h3 className="font-semibold text-gray-900">
+                          <h3 className="font-semibold text-foreground">
                             {ragazzo.nome} {ragazzo.cognome}
                           </h3>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-muted-foreground">
                             Fascia: {ragazzo.fascia_eta}
                           </p>
                         </div>
@@ -105,7 +105,7 @@ export default async function DashboardPage() {
                         </span>
                       </div>
                       {ragazzo.provenienza && (
-                        <p className="text-sm text-gray-500 mt-2">
+                        <p className="text-sm text-muted-foreground mt-2">
                           {ragazzo.provenienza}
                         </p>
                       )}
@@ -113,7 +113,7 @@ export default async function DashboardPage() {
                   ))}
                 </div>
               ) : (
-                <p className="text-gray-500 text-center py-8">
+                <p className="text-muted-foreground text-center py-8">
                   Nessun ragazzo registrato. Crea le tabelle nel database Supabase.
                 </p>
               )}
@@ -121,9 +121,9 @@ export default async function DashboardPage() {
           </div>
 
           {/* Eventi Section */}
-          <div className="bg-white rounded-lg shadow">
-            <div className="p-6 border-b border-gray-200">
-              <h2 className="text-xl font-bold text-gray-900">
+          <div className="bg-surface rounded-lg shadow border border-border">
+            <div className="p-6 border-b border-border">
+              <h2 className="text-xl font-bold text-foreground">
                 Prossimi Eventi
               </h2>
             </div>
@@ -137,16 +137,16 @@ export default async function DashboardPage() {
                   {eventi.map((evento) => (
                     <div 
                       key={evento.id} 
-                      className="p-4 bg-gray-50 rounded-lg"
+                      className="p-4 bg-surface-muted rounded-lg"
                     >
-                      <h3 className="font-semibold text-gray-900 mb-2">
+                      <h3 className="font-semibold text-foreground mb-2">
                         {evento.titolo}
                       </h3>
-                      <p className="text-sm text-gray-600">
+                      <p className="text-sm text-muted-foreground">
                         📅 {new Date(evento.data_evento).toLocaleDateString('it-IT')}
                       </p>
                       {evento.luogo && (
-                        <p className="text-sm text-gray-500 mt-1">
+                        <p className="text-sm text-muted-foreground mt-1">
                           📍 {evento.luogo}
                         </p>
                       )}
@@ -154,7 +154,7 @@ export default async function DashboardPage() {
                   ))}
                 </div>
               ) : (
-                <p className="text-gray-500 text-center py-8">
+                <p className="text-muted-foreground text-center py-8">
                   Nessun evento programmato
                 </p>
               )}

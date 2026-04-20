@@ -1,12 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import {
-  Mail,
-  Phone,
-  MessageCircle,
-  MapPin,
-  Clock,
-} from 'lucide-react';
+import { NAV_SECTIONS } from '@/lib/navigation';
+import { CONTACT_INFO } from '@/lib/contact';
 
 export default function Footer() {
   return (
@@ -17,7 +12,6 @@ export default function Footer() {
 
       <div className="relative container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          {/* Colonna 1: Info P.A.S.S.O. */}
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="relative h-12 w-12 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 overflow-hidden">
@@ -31,7 +25,7 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-xl font-semibold text-white leading-tight">P.A.S.S.O.</h3>
-                <p className="text-xs text-blue-100 uppercase tracking-[0.2em]">Crescere insieme</p>
+                <p className="text-xs text-primary-100 uppercase tracking-[0.2em]">Crescere insieme</p>
               </div>
             </div>
             <p className="text-white/80 text-sm leading-relaxed mb-6">
@@ -39,118 +33,87 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Colonna 2: Link Rapidi */}
-          <div>
+          <nav aria-label="Link rapidi">
             <h3 className="text-lg font-semibold text-white mb-4">Link Rapidi</h3>
             <ul className="space-y-2">
-              <li>
-                <Link href="/storia" className="text-white/80 hover:text-white transition-colors text-sm">
-                  La Nostra Storia
-                </Link>
-              </li>
-              <li>
-                <Link href="/scopo" className="text-white/80 hover:text-white transition-colors text-sm">
-                  Il Nostro Scopo
-                </Link>
-              </li>
-              <li>
-                <Link href="/servizi" className="text-white/80 hover:text-white transition-colors text-sm">
-                  I Nostri Servizi
-                </Link>
-              </li>
-              <li>
-                <Link href="/team" className="text-white/80 hover:text-white transition-colors text-sm">
-                  Il Nostro Team
-                </Link>
-              </li>
-              <li>
-                <Link href="/contatti" className="text-white/80 hover:text-white transition-colors text-sm">
-                  Contattaci
-                </Link>
-              </li>
+              {NAV_SECTIONS.map((section) => (
+                <li key={section.href}>
+                  <Link
+                    href={section.href}
+                    className="text-white/80 hover:text-white transition-colors text-sm"
+                  >
+                    {section.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
-          </div>
+          </nav>
 
-          {/* Colonna 3: Contatti */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Contatti</h3>
             <ul className="space-y-3">
-              <li className="flex items-start gap-2">
-                <div>
-                  <p className="text-xs text-blue-200/80 mb-1 uppercase tracking-wide">Email</p>
-                  <a
-                    href="mailto:info@progettopasso.it"
-                    className="text-white/80 hover:text-blue-200 transition-colors text-sm"
-                  >
-                    info@progettopasso.it
-                  </a>
-                </div>
+              <li>
+                <p className="text-xs text-primary-200/80 mb-1 uppercase tracking-wide">Email</p>
+                <a
+                  href={`mailto:${CONTACT_INFO.email}`}
+                  className="text-white/80 hover:text-primary-100 transition-colors text-sm"
+                >
+                  {CONTACT_INFO.email}
+                </a>
               </li>
-              <li className="flex items-start gap-2">
-                <div>
-                  <p className="text-xs text-blue-200/80 mb-1 uppercase tracking-wide">Telefono</p>
-                  <a
-                    href="tel:+393401234567"
-                    className="text-white/80 hover:text-blue-200 transition-colors text-sm"
-                  >
-                    +39 340 123 4567
-                  </a>
-                </div>
+              <li>
+                <p className="text-xs text-primary-200/80 mb-1 uppercase tracking-wide">Telefono</p>
+                <a
+                  href={`tel:${CONTACT_INFO.phoneE164}`}
+                  className="text-white/80 hover:text-primary-100 transition-colors text-sm"
+                >
+                  {CONTACT_INFO.phone}
+                </a>
               </li>
-              <li className="flex items-start gap-2">
-                <div>
-                  <p className="text-xs text-blue-200/80 mb-1 uppercase tracking-wide">WhatsApp</p>
-                  <a
-                    href="https://wa.me/393401234567"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white/80 hover:text-blue-200 transition-colors text-sm"
-                  >
-                    +39 340 123 4567
-                  </a>
-                </div>
+              <li>
+                <p className="text-xs text-primary-200/80 mb-1 uppercase tracking-wide">WhatsApp</p>
+                <a
+                  href={CONTACT_INFO.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/80 hover:text-primary-100 transition-colors text-sm"
+                >
+                  {CONTACT_INFO.phone}
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Colonna 4: Sede */}
           <div>
             <h3 className="text-lg font-semibold text-white mb-4">Sede</h3>
             <div className="space-y-3">
-              <div className="flex items-start gap-2">
-                <div>
-                  <p className="text-white/80 text-sm leading-relaxed">
-                    Via Giuseppe Mazzini, 42<br />
-                    20100 Milano (MI)<br />
-                    Italia
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-2">
-                <div>
-                  <p className="text-xs text-blue-200/80 mb-1 uppercase tracking-wide">Orari</p>
-                  <p className="text-white/80 text-sm">
-                    Lun-Ven: 9:00 - 18:00<br />
-                    Sab-Dom: Chiuso
-                  </p>
-                </div>
+              <p className="text-white/80 text-sm leading-relaxed">
+                {CONTACT_INFO.address.street}<br />
+                {CONTACT_INFO.address.zip} {CONTACT_INFO.address.city} ({CONTACT_INFO.address.province})<br />
+                {CONTACT_INFO.address.country}
+              </p>
+              <div>
+                <p className="text-xs text-primary-200/80 mb-1 uppercase tracking-wide">Orari</p>
+                <p className="text-white/80 text-sm">
+                  {CONTACT_INFO.hours}<br />
+                  Sab–Dom: Chiuso
+                </p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Linea separatrice */}
         <div className="border-t border-white/10 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/60 text-sm text-center md:text-left">
-              © {new Date().getFullYear()} P.A.S.S.O. - Percorsi di Autonomia, Sostegno e Servizi Operativi. Tutti i diritti riservati.
+              © {new Date().getFullYear()} P.A.S.S.O. — Percorsi di Autonomia, Sostegno e Servizi Operativi. Tutti i diritti riservati.
             </p>
             <div className="flex gap-4 text-sm">
-              <Link href="/privacy" className="text-white/60 hover:text-blue-200 transition-colors">
+              <Link href="/privacy" className="text-white/60 hover:text-primary-100 transition-colors">
                 Privacy Policy
               </Link>
               <span className="text-white/10">|</span>
-              <Link href="/cookie" className="text-white/60 hover:text-blue-200 transition-colors">
+              <Link href="/cookie" className="text-white/60 hover:text-primary-100 transition-colors">
                 Cookie Policy
               </Link>
             </div>

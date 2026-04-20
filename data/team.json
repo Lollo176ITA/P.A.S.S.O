@@ -73,26 +73,6 @@
       "foto": "/team/lorenzo-s.jpg"
     }
   ],
-  "volontari": [
-    {
-      "id": "volontario-1",
-      "nome": "Nome",
-      "cognome": "Cognome",
-      "foto": "/team/placeholder.jpg"
-    },
-    {
-        "id": "ugo-1",
-      "nome": "Nome",
-      "cognome": "aa",
-      "foto": "/team/placeholder.jpg"
-    }
-  ],
-  "partner": [
-    {
-      "id": "partner-1",
-      "nome": "Cf",
-      "logo": "/partner/placeholder.png",
-      "sito": "https://example.com"
-    }
-  ]
+  "volontari": [],
+  "partner": []
 }
