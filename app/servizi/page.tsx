@@ -90,10 +90,10 @@ export default function ServiziPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-900 mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-primary-900 dark:text-primary-100 mb-6 tracking-tight">
             I Nostri <span className="text-primary-500">Servizi</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Un percorso completo, pensato per accompagnarti passo dopo passo verso la tua autonomia.
           </p>
         </motion.div>
@@ -107,20 +107,20 @@ export default function ServiziPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.05 }}
-              className="group bg-white rounded-3xl p-8 shadow-lg border border-gray-100 hover:border-primary-200 hover:shadow-xl transition-all duration-300 flex flex-col h-full"
+              className="group bg-surface rounded-3xl p-8 shadow-lg border border-border hover:border-primary/40 hover:shadow-xl transition-all duration-300 flex flex-col h-full"
             >
-              <div className="w-12 h-12 rounded-2xl bg-primary-50 text-primary-600 flex items-center justify-center group-hover:scale-110 transition-transform mb-4">
+              <div className="w-12 h-12 rounded-2xl bg-primary-50 dark:bg-primary-900/40 text-primary-600 dark:text-primary-300 flex items-center justify-center group-hover:scale-110 transition-transform mb-4">
                 {service.icon}
               </div>
 
-              <h2 className="text-2xl font-bold text-primary-800 mb-3">
+              <h2 className="text-2xl font-bold text-primary-800 dark:text-primary-200 mb-3">
                 {service.label}
               </h2>
-              <p className="text-gray-600 mb-5 leading-relaxed">
+              <p className="text-muted-foreground mb-5 leading-relaxed">
                 {service.description}
               </p>
 
-              <ul className="space-y-3 text-gray-600 mt-auto">
+              <ul className="space-y-3 text-muted-foreground mt-auto">
                 {service.points.map((point) => (
                   <li key={point} className="flex items-start gap-2">
                     <span className="mt-1 h-2 w-2 rounded-full bg-primary-400" />
@@ -137,12 +137,12 @@ export default function ServiziPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-primary-50 rounded-3xl p-8 md:p-12 text-center"
+          className="bg-primary-50 dark:bg-primary-900/30 rounded-3xl p-8 md:p-12 text-center border border-primary-100 dark:border-primary-800/60"
         >
-          <h3 className="text-3xl font-bold text-primary-900 mb-4">
+          <h3 className="text-3xl font-bold text-primary-900 dark:text-primary-100 mb-4">
             Tutti i servizi sono gratuiti
           </h3>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
             Crediamo che il supporto non debba essere un privilegio. Se stai uscendo da una comunità
             o da una casa famiglia e senti il bisogno di una mano, i nostri servizi sono pensati
             proprio per te.
@@ -153,7 +153,7 @@ export default function ServiziPage() {
                 Scopri come accedere <ArrowRight className="w-5 h-5" />
               </button>
             </Link>
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-muted-foreground">
               Nessun costo, solo impegno reciproco e voglia di costruire il tuo futuro.
             </p>
           </div>

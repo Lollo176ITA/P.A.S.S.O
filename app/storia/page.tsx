@@ -16,10 +16,10 @@ export default function StoriaPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-900 mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-primary-900 dark:text-primary-100 mb-6 tracking-tight">
             La Nostra <span className="text-primary-500">Storia</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Un progetto nato dall&apos;esperienza vissuta in prima persona e dalla volontà 
             di trasformare le difficoltà in opportunità per gli altri.
           </p>
@@ -35,19 +35,19 @@ export default function StoriaPage() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100"
+              className="bg-surface rounded-3xl p-8 md:p-10 shadow-xl border border-border"
             >
-              <h2 className="text-3xl font-bold text-primary-800 mb-6 flex items-center gap-3">
+              <h2 className="text-3xl font-bold text-primary-800 dark:text-primary-200 mb-6 flex items-center gap-3">
                 <Sparkles className="w-6 h-6 text-primary-500" />
                 Come Nasce P.A.S.S.O.
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 P.A.S.S.O. nasce nel <strong>dicembre 2025</strong> da un&apos;idea di Lorenzo Censi, 
                 che ha vissuto in prima persona l&apos;esperienza della casa famiglia: prima come ragazzo 
                 accolto, poi come volontario. Questa doppia prospettiva gli ha permesso di osservare 
                 da vicino una realtà che spesso rimane invisibile.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 Nel corso degli anni, Lorenzo ha potuto constatare cosa accade ai ragazzi quando 
                 escono dalle strutture di accoglienza: si trovano ad affrontare la vita adulta 
                 <strong> senza possedere tutte le competenze necessarie per vivere in autonomia</strong>. 
@@ -55,7 +55,7 @@ export default function StoriaPage() {
                 E, cosa ancora più grave, <strong>non conoscono le agevolazioni e i diritti</strong> che 
                 spettano loro per legge.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 P.A.S.S.O. nasce proprio per colmare questo vuoto: <strong>aiutare nella praticità 
                 quotidiana</strong>, fornendo strumenti concreti, informazioni accessibili e un 
                 accompagnamento umano per costruire, passo dopo passo, un futuro indipendente.
@@ -101,13 +101,13 @@ export default function StoriaPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.25 }}
-              className="bg-primary-50 rounded-3xl p-8 md:p-10 border border-primary-100"
+              className="bg-primary-50 dark:bg-primary-900/30 rounded-3xl p-8 md:p-10 border border-primary-100 dark:border-primary-800/60"
             >
-              <h3 className="text-2xl font-bold text-primary-800 mb-4 flex items-center gap-3">
+              <h3 className="text-2xl font-bold text-primary-800 dark:text-primary-200 mb-4 flex items-center gap-3">
                 <HandHeart className="w-6 h-6 text-primary-500" />
                 La Decisione di Agire
               </h3>
-              <p className="text-lg text-gray-700 leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 Da questa consapevolezza è nata una scelta: non restare a guardare, ma <strong>fare 
                 qualcosa di concreto</strong>. Lorenzo ha deciso di mettere la propria esperienza al 
                 servizio degli altri, creando un&apos;associazione che potesse essere quel punto di 
@@ -123,30 +123,30 @@ export default function StoriaPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100"
+              className="bg-surface rounded-3xl p-8 md:p-10 shadow-xl border border-border"
             >
-              <h3 className="text-2xl font-bold text-primary-800 mb-4 flex items-center gap-3">
+              <h3 className="text-2xl font-bold text-primary-800 dark:text-primary-200 mb-4 flex items-center gap-3">
                 <Users className="w-6 h-6 text-primary-500" />
                 Il Primo Nucleo di Soci
               </h3>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 Nessun grande progetto nasce da solo. Lorenzo ha trovato il sostegno delle persone 
                 a lui più vicine: <strong>Giorgia</strong>, <strong>Alessio</strong> e <strong>Chiara</strong>, che hanno deciso di essere parte attiva 
                 di questo percorso.
               </p>
-              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 A loro si sono uniti <strong>Sonia</strong>, <strong>Marco</strong>, <strong>Claudia</strong>, 
                 <strong> Eleonora</strong> e <strong>Lorenzo S.</strong>: insieme formano il primo nucleo 
                 di soci fondatori di P.A.S.S.O. Un gruppo di persone diverse, unite dalla stessa 
                 volontà di fare la differenza nella vita dei ragazzi più fragili.
               </p>
               
-              <div className="bg-primary-50 rounded-2xl p-6 mt-6">
+              <div className="bg-primary-50 dark:bg-primary-900/30 rounded-2xl p-6 mt-6">
                 <div className="flex items-center gap-3 mb-3">
                   <Lightbulb className="w-5 h-5 text-primary-600" />
                   <span className="font-semibold text-primary-900">La Nostra Missione</span>
                 </div>
-                <p className="text-gray-700 leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed">
                   Accompagnare i giovani che escono dalle comunità e dalle case famiglia verso 
                   l&apos;autonomia, fornendo competenze pratiche per la vita quotidiana e 
                   informazioni chiare sui diritti e le agevolazioni che spesso non conoscono.
@@ -160,13 +160,13 @@ export default function StoriaPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="bg-white rounded-3xl p-8 md:p-10 shadow-xl border border-gray-100"
+              className="bg-surface rounded-3xl p-8 md:p-10 shadow-xl border border-border"
             >
-              <h3 className="text-2xl font-bold text-primary-800 mb-4 flex items-center gap-3">
+              <h3 className="text-2xl font-bold text-primary-800 dark:text-primary-200 mb-4 flex items-center gap-3">
                 <ArrowRight className="w-6 h-6 text-primary-500" />
                 Guardando al Futuro
               </h3>
-              <p className="text-lg text-gray-600 leading-relaxed mb-4">
+              <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                 A partire dall&apos;inizio del <strong>2026</strong>, P.A.S.S.O. avvierà ufficialmente 
                 le sue attività. L&apos;obiettivo è ambizioso ma chiaro: diventare un punto di riferimento 
                 per tutti i ragazzi che escono dal sistema di accoglienza, offrendo loro gli strumenti 
@@ -192,21 +192,21 @@ export default function StoriaPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:border-primary-200 transition-colors group"
+                className="bg-surface p-6 rounded-2xl shadow-lg border border-border hover:border-primary/40 transition-colors group"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-gray-500 text-sm font-medium">{stat.label}</span>
+                  <span className="text-muted-foreground text-sm font-medium">{stat.label}</span>
                   <div className="text-primary-400 group-hover:text-primary-600 transition-colors">
                     {stat.icon}
                   </div>
                 </div>
-                <div className="text-4xl font-bold text-primary-900">{stat.value}</div>
+                <div className="text-4xl font-bold text-primary-900 dark:text-primary-100">{stat.value}</div>
               </motion.div>
             ))}
             
-            <div className="bg-primary-50 rounded-2xl p-6 mt-8">
-              <h4 className="font-bold text-primary-900 mb-2">Vuoi far parte del progetto?</h4>
-              <p className="text-sm text-gray-600 mb-4">Scopri come puoi contribuire al nostro progetto e aiutare i ragazzi a costruire il loro futuro.</p>
+            <div className="bg-primary-50 dark:bg-primary-900/30 rounded-2xl p-6 mt-8 border border-primary-100 dark:border-primary-800/60">
+              <h4 className="font-bold text-primary-900 dark:text-primary-100 mb-2">Vuoi far parte del progetto?</h4>
+              <p className="text-sm text-muted-foreground mb-4">Scopri come puoi contribuire al nostro progetto e aiutare i ragazzi a costruire il loro futuro.</p>
               <Link href="/contatti">
                 <button className="w-full py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-xl font-medium transition-colors shadow-md hover:shadow-lg cursor-pointer">
                   Contattaci

@@ -152,8 +152,38 @@ CREATE TABLE IF NOT EXISTS partner (
 );
 
 -- ============================================
+-- TABELLA: contact_messages
+-- Messaggi ricevuti tramite il form pubblico /contatti
+-- ============================================
+CREATE TABLE IF NOT EXISTS contact_messages (
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    name VARCHAR(120) NOT NULL,
+    email VARCHAR(254) NOT NULL,
+    topic VARCHAR(40) NOT NULL CHECK (topic IN ('generale', 'supporto', 'volontariato', 'partnership', 'stampa')),
+    message TEXT NOT NULL,
+    privacy_accepted BOOLEAN NOT NULL DEFAULT false,
+    ip INET,
+    user_agent TEXT,
+    handled BOOLEAN DEFAULT false,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+ALTER TABLE contact_messages ENABLE ROW LEVEL SECURITY;
+
+-- Solo insert per utenti anonimi (form pubblico)
+CREATE POLICY IF NOT EXISTS "Anyone can submit a contact message"
+    ON contact_messages FOR INSERT
+    TO anon, authenticated
+    WITH CHECK (privacy_accepted = true);
+
+-- Lettura solo per service_role (gestita lato server/admin)
+-- Nota: le policy SELECT non vengono create per anon/authenticated.
+
+-- ============================================
 -- INDICI per migliorare le performance
 -- ============================================
+CREATE INDEX IF NOT EXISTS idx_contact_messages_created ON contact_messages(created_at DESC);
+CREATE INDEX IF NOT EXISTS idx_contact_messages_handled ON contact_messages(handled);
 CREATE INDEX idx_ragazzi_fascia_eta ON ragazzi(fascia_eta);
 CREATE INDEX idx_ragazzi_stato ON ragazzi(stato);
 CREATE INDEX idx_equipe_ragazzo ON equipe(ragazzo_id);

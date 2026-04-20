@@ -2,7 +2,7 @@
 
 import PageLayout from '@/components/PageLayout';
 import { motion } from 'framer-motion';
-import { Target, Heart, Users, Sparkles, ArrowRight, Home, FileText, HandHeart, Zap } from 'lucide-react';
+import { Target, Sparkles, ArrowRight, Home, FileText, HandHeart, Zap } from 'lucide-react';
 import Link from 'next/link';
 
 export default function ScopoPage() {
@@ -31,10 +31,10 @@ export default function ScopoPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl md:text-7xl font-bold text-primary-900 mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-primary-900 dark:text-primary-100 mb-6 tracking-tight">
             Il Nostro <span className="text-primary-500">Scopo</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Aiutiamo i ragazzi che escono da comunità e case famiglia ad affrontare 
             la vita adulta con competenze concrete e informazioni chiare.
           </p>
@@ -81,17 +81,17 @@ export default function ScopoPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-linear-to-r from-primary-50 to-primary-100 rounded-2xl p-6 md:p-8 mb-20 border border-primary-200"
+          className="bg-linear-to-r from-primary-50 to-primary-100 dark:from-primary-900/30 dark:to-primary-800/30 rounded-2xl p-6 md:p-8 mb-20 border border-primary-200 dark:border-primary-700/60"
         >
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="flex items-center justify-center w-16 h-16 bg-primary-600 rounded-full shrink-0">
               <Zap className="w-8 h-8 text-white" />
             </div>
             <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold text-primary-900 mb-2">
+              <h3 className="text-2xl font-bold text-primary-900 dark:text-primary-100 mb-2">
                 Un&apos;Associazione Giovane, per i Giovani
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 <strong className="text-primary-700">5 soci su 9 sono under 35</strong>. Crediamo che chi ha 
                 vissuto esperienze simili possa capire meglio le sfide che i ragazzi affrontano. 
                 La nostra energia e la nostra freschezza sono al servizio di chi sta costruendo il proprio futuro.
@@ -107,10 +107,10 @@ export default function ScopoPage() {
           viewport={{ once: true }}
           className="mb-8"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-900 text-center mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-900 dark:text-primary-100 text-center mb-4">
             I Tre Pilastri di P.A.S.S.O.
           </h2>
-          <p className="text-gray-600 text-center max-w-2xl mx-auto mb-12">
+          <p className="text-muted-foreground text-center max-w-2xl mx-auto mb-12">
             Tre aree di intervento concrete per accompagnare ogni ragazzo verso una vita autonoma e consapevole.
           </p>
         </motion.div>
@@ -145,15 +145,15 @@ export default function ScopoPage() {
             <motion.div 
               key={idx}
               variants={item}
-              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary-200"
+              className="group bg-surface rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-border hover:border-primary/40"
             >
-              <div className="w-14 h-14 bg-primary-50 rounded-xl flex items-center justify-center text-primary-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-14 h-14 bg-primary-50 dark:bg-primary-900/40 rounded-xl flex items-center justify-center text-primary-600 dark:text-primary-300 mb-6 group-hover:scale-110 transition-transform duration-300">
                 {card.icon}
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-primary-700 transition-colors">
+              <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary-700 transition-colors">
                 {card.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-muted-foreground leading-relaxed mb-6">
                 {card.desc}
               </p>
               <ul className="space-y-2">
@@ -173,10 +173,10 @@ export default function ScopoPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-primary-50 rounded-3xl p-8 md:p-12 text-center"
+          className="bg-primary-50 dark:bg-primary-900/30 rounded-3xl p-8 md:p-12 text-center border border-primary-100 dark:border-primary-800/60"
         >
-          <h2 className="text-3xl font-bold text-primary-900 mb-4">Hai bisogno di supporto?</h2>
-          <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-primary-900 dark:text-primary-100 mb-4">Hai bisogno di supporto?</h2>
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
             Che tu stia per uscire dalla comunità o l&apos;abbia già fatto, siamo qui per te. 
             Nessuna domanda è banale, nessun problema è troppo piccolo.
           </p>
